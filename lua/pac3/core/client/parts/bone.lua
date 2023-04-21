@@ -305,7 +305,7 @@ end
 BUILDER:Register()
 
 pac.AddHook("OnEntityCreated", "hide_mesh_no_crash", function(ent)
-	local ply = ent:GetRagdollOwner()
+	local ply = ent:GetRagdollOwnerOld()
 	if ply:IsPlayer() and ply.pac_inf_scale then
 		for i = 0, ply:GetBoneCount() - 1 do
 			local scale = ply:GetManipulateBoneScale(i)
